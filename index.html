@@ -1,1 +1,22 @@
-<h1>test</h1>
+<!doctype html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111318">
+  <title>Optimax · Treffplaner</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body><div class="app-shell">
+<header class="navbar topbar"><div class="brand-mark">O</div><div class="flex-1 min-w-0"><div class="brand-title">Optimax <span>/</span> Treffplaner</div><div class="brand-subtitle">Termine, Treffen und Projekt-Meilensteine</div></div><a class="btn btn-sm btn-ghost github-link" href="https://github.com/DerAnonymeHans/eFinanzer-v2/milestones" target="_blank" rel="noreferrer">GitHub Milestones ↗</a></header>
+<main class="main-layout"><aside class="sidebar">
+<div class="sidebar-heading">ÜBERSICHT</div><section class="stats-grid"><div class="stat-card"><span class="stat-label">Termine</span><strong id="local-count">–</strong><span class="stat-hint">aus JSON</span></div><div class="stat-card"><span class="stat-label">Milestones</span><strong id="milestone-count">–</strong><span class="stat-hint">von GitHub</span></div></section>
+<div class="sidebar-heading section-gap">KALENDER</div><div class="filter-list"><label class="filter-row"><input id="filter-local" type="checkbox" class="checkbox checkbox-sm" checked><span class="filter-dot local-dot"></span><span>Eigene Termine</span></label><label class="filter-row"><input id="filter-github" type="checkbox" class="checkbox checkbox-sm" checked><span class="filter-dot github-dot"></span><span>GitHub Milestones</span></label></div>
+<div class="sidebar-heading section-gap">OHNE FÄLLIGKEIT</div><div id="undated-list" class="undated-list"><div class="loading-line">Lade Milestones …</div></div>
+<div class="sidebar-footer"><span class="status-indicator"></span><span id="sync-status">Verbinde mit GitHub …</span></div>
+</aside><section class="calendar-panel"><div class="calendar-heading"><div><div class="eyebrow">PLANUNG</div><h1>Kalender</h1><p>Alle wichtigen Termine an einem Ort.</p></div><button id="refresh-button" class="btn btn-sm btn-outline refresh-button" type="button">↻ <span>Aktualisieren</span></button></div><div id="calendar" class="calendar-card"></div><div class="calendar-legend"><span><i class="legend-dot local-dot"></i> Eigene Termine</span><span><i class="legend-dot github-dot"></i> GitHub Milestones</span></div></section></main></div>
+<dialog id="event-dialog" class="modal"><div class="modal-box event-modal"><form method="dialog"><button class="btn btn-sm btn-circle btn-ghost close-button" aria-label="Schließen">✕</button></form><div id="dialog-type" class="eyebrow">TERMIN</div><h2 id="dialog-title" class="modal-title"></h2><p id="dialog-date" class="dialog-date"></p><p id="dialog-description" class="dialog-description"></p><a id="dialog-link" class="link link-primary dialog-link" target="_blank" rel="noreferrer">Auf GitHub öffnen ↗</a></div><form method="dialog" class="modal-backdrop"><button>Schließen</button></form></dialog>
+</body></html>
