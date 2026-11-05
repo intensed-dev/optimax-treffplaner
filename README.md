@@ -1,19 +1,10 @@
 # Optimax Treffplaner
 
-Ein statischer Kalender mit DaisyUI, FullCalendar und einer GitHub-Milestone-Quelle.
+Statischer Kalender mit DaisyUI, FullCalendar und GitHub-Milestone-Integration.
 
-## Funktionen
+## Eigene Termine
 
-- Eigene Termine aus `data/events.json`
-- GitHub Milestones aus `DerAnonymeHans/eFinanzer-v2`
-- Monats-, Wochen- und Listenansicht
-- Filter für eigene Termine und GitHub-Milestones
-- Undatierte Milestones werden separat angezeigt
-- Läuft als statische Website, z. B. mit GitHub Pages
-
-## Eigene Termine eintragen
-
-Bearbeite `data/events.json`. Beispiel:
+Termine werden in `data/events.json` gepflegt:
 
 ```json
 {
@@ -25,34 +16,27 @@ Bearbeite `data/events.json`. Beispiel:
       "end": "2026-12-03T19:30:00",
       "allDay": false,
       "location": "Discord",
-      "description": "Themen für das nächste Update besprechen."
+      "description": "Themen für das nächste Update besprechen.",
+      "url": "https://example.com"
     }
   ]
 }
 ```
 
-- `id`: eindeutige Kennung
-- `title`: Titel im Kalender
-- `start`: Datum oder Datum mit Uhrzeit (ISO 8601)
-- `end`: optionales Enddatum bzw. Ende mit Uhrzeit
-- `allDay`: `true` für ganztägige Termine, sonst `false`
-- `location`, `description`, `url`: optional
+Jeder Eintrag braucht eine eindeutige `id`, einen `title` und ein `start`-Datum (ISO 8601). `end`, `allDay`, `location`, `description` und `url` sind optional. Ganztägige Termine verwenden beispielsweise `2026-12-03`; Termine mit Uhrzeit `2026-12-03T18:30:00`.
 
-## GitHub-Milestones
+## GitHub Milestones
 
-Die Website fragt beim Laden die öffentliche GitHub-API ab:
+Die Seite lädt Milestones öffentlich von `DerAnonymeHans/eFinanzer-v2` über die GitHub REST API. Milestones mit Fälligkeitsdatum erscheinen im Kalender, undatierte Milestones werden separat angezeigt. Kein Token erforderlich, solange das Repository öffentlich ist.
 
-`https://api.github.com/repos/DerAnonymeHans/eFinanzer-v2/milestones?state=all&per_page=100`
+## Kalender
 
-Milestones mit `due_on` werden als Kalendereinträge dargestellt. Milestones ohne Fälligkeitsdatum erscheinen separat in der Seitenleiste. Die API wird direkt vom Browser aufgerufen; ein Token ist für ein öffentliches Repository nicht erforderlich.
+Monats-, Wochen- und Listenansicht; Filter für eigene Termine und Milestones; Details beim Anklicken; manuelle Aktualisierung.
 
-## Lokal testen
+## Hosting
 
-Die Seite muss über einen Webserver aufgerufen werden, da Browser `fetch()` auf lokale JSON-Dateien via `file://` blockieren. GitHub Pages eignet sich direkt für das Hosting.
+Für GitHub Pages geeignet. Zum lokalen Testen einen lokalen Webserver verwenden, da `fetch()` JSON-Dateien nicht zuverlässig über `file://` laden kann.
 
 ## Technologien
 
-- DaisyUI 5
-- Tailwind CSS Browser CDN
-- FullCalendar 6
-- Vanilla JavaScript
+DaisyUI 5 · Tailwind CSS Browser CDN · FullCalendar 6 · Vanilla JavaScript
