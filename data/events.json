@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "id": "beispiel-treffen",
+      "title": "Beispiel: Planungstreffen",
+      "start": "2026-11-12",
+      "allDay": true,
+      "location": "Online",
+      "description": "Dies ist ein Beispieldatensatz. Einträge können direkt in dieser JSON-Datei ergänzt oder angepasst werden."
+    },
+    {
+      "id": "beispiel-termin",
+      "title": "Beispiel: Projekt-Check-in",
+      "start": "2026-11-18T16:00:00",
+      "allDay": false,
+      "location": "Besprechungsraum",
+      "description": "Ein Termin mit Uhrzeit."
+    }
+  ]
+}
