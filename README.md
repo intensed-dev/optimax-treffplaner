@@ -40,3 +40,7 @@ Für GitHub Pages geeignet. Zum lokalen Testen einen lokalen Webserver verwenden
 ## Technologien
 
 DaisyUI 5 · Tailwind CSS Browser CDN · FullCalendar 6 · Vanilla JavaScript
+
+
+
+made by ChatGPT
